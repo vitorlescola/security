@@ -26,8 +26,7 @@ public class ConfiguraçaoSegurança {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		http.authorizeHttpRequests((authorize) ->
 		authorize
-		.requestMatchers("/login","/registrar").permitAll() //se for o login deixa
-		.requestMatchers("/h2-console/**").permitAll()
+		.requestMatchers("/login","/registrar","/h2-console/**").permitAll() //se for o login deixa
 		.requestMatchers("/css/**").permitAll()
 		.anyRequest().authenticated() //qualquer outra coisa não
 		)
@@ -44,6 +43,8 @@ public class ConfiguraçaoSegurança {
         .deleteCookies("JSESSIONID")
         .permitAll()
 		);
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
 		return http.build();
 	}
 }

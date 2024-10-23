@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br" xmls=http://www.thymeleaf.org>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+  <link href="/css/home.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <nav  id="menu">
+    <ul>
+    <li><a th:href="@{/home}">Home</a>
+    <li><a th:href="@{/perfil}">perfil</a>
+    <li><a th:href="@{/configuraçaes}">Configurações</a>
+    <!--  <li><a th:href="#" onclick="document.getElementById('logoutForm').submit()">Logout</a> --> 
+    </ul>
+    </nav>
+    
+   <!--  <div id="container">
+    <h2>Login</h2>
+    <form id="logoutForm" th:action="@{/logout}" method="post" style="display:nome">
+    </form>
+    </div>
+     --> 
+  </body>
+</html>

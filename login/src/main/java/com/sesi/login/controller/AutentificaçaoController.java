@@ -32,6 +32,7 @@ public class AutentificaçaoController {
 	
 	@GetMapping("/login")
 	public String login() {
+		
 		return "login";
 	}
 	
@@ -41,7 +42,7 @@ public class AutentificaçaoController {
 		return "registrar";
 	}
 	
-	@PostMapping
+	@PostMapping("/registrar")
 	public String registrarUsuario(@ModelAttribute Usuario usuario,Model modelo) {
 		if(usuarioRepository.findByNomeUsuario(usuario.getNomeUsuario()) !=null) {
 			modelo.addAttribute("mensagem","Nome de usuario já existe");

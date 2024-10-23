@@ -1,27 +1,28 @@
 <!doctype html>
-<html lang="pt-br" xmls=http://www.thymeleaf.org>
+<html lang="pt-br" xmlns="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registrar</title>
-  <link href="/css/estilo.css" type="text/css" rel="stylesheet">
+    <link href="/css/estilo.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <div id="container">
-    <h2>Registrar</h2>
-    <form th:action="@{/registrar}" th:object="@{usuario}" method="post">
-    <div>
-    <label>Nome do usuario</label>
-    <input type="text" name="username" th:field="*{nomeUsuario}">
+      <h2>Registrar</h2>
+      <form th:action="@{/registrar}" th:object="${usuario}" method="post">
+        <div>
+          <label>Nome do usuário</label>
+          <input type="text" name="nomeUsuario" th:field="*{nomeUsuario}">
+        </div>
+        <div>
+          <label>Senha</label>
+          <input type="password" name="senha" th:field="*{senha}">
+        </div>    
+        <div>
+          <button type="submit">Registrar</button>
+        </div>
+        <p>Já tem conta? <a th:href="@{/login}">Faça login aqui</a></p>
+      </form>
     </div>
-    <div>
-    <label>Senha</label>
-    <input type="password" name="senha" th:field="*{senha}">
-    </div>    
-    <div>
-    <button type="submit">Registrar</button>
-    </div>
-    <p>Já tem conta? <a th:href="@{/login}">Faça login aqui</a></p>
-    </form>
   </body>
 </html>
